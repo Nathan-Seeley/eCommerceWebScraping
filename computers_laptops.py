@@ -4,19 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 import csv
-
 file = open("computers_laptops.csv", "w")
 writer = csv.writer(file)
 writer.writerow(["name", "price","specifications", "number of reviews"])
-
 browser_driver = Service(r"C:\Users\Owner\Desktop\devCodeCamp projects\Week 17 Web Scraping in Selenium\eCommerce-Project\eCommerceWebScraping\chromedriver.exe")
 scraper = webdriver.Chrome(service=browser_driver)
 # scraper = webdriver.ChromeOptions(options=browser_driver)
-
 scraper.get("https://webscraper.io/test-sites/e-commerce/static/computers/laptops")
-
 scraper.find_element(By.ID, "closeCookieBanner").click()
-
 unique_id = 1
 while True: 
     computers = scraper.find_elements (By.CLASS_NAME, "pull-right price")
