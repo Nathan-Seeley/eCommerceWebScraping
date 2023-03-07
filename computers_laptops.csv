@@ -1,4 +1,4 @@
-name,price,specifications,number of reviews
+id,name,price,specifications,number of reviews
 1,Packard 255 G2,$416.99,"15.6"", AMD E2-3800 1.3GHz, 4GB, 500GB, Windows 8.1",2
 2,Aspire E1-510,$306.99,"15.6"", Pentium N3520 2.16GHz, 4GB, 500GB, Linux",2
 3,ThinkPad T540p,$1178.99,"15.6"", Core i5-4200M, 4GB, 500GB, Win7 Pro 64bit",2

@@ -4,15 +4,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 import csv
+
 file = open("computers_laptops.csv", "w")
 writer = csv.writer(file)
-writer.writerow(["name", "price","specifications", "number of reviews"])
+writer.writerow(["id", "name", "price","specifications", "number of reviews" ])
+
 browser_driver = Service("chromedriver.exe")
 scraper = webdriver.Chrome(service=browser_driver)
 scraper.get("https://webscraper.io/test-sites/e-commerce/static/computers/laptops")
 scraper.find_element(By.CLASS_NAME, "acceptCookies").click()
+
 # wait = WebDriverWait(scraper, 10)
 # element_to_watch = scraper.find_element(By.CLASS_NAME,"col-md-9")
+
 unique_id = 1
 while True: 
     computers = scraper.find_elements (By.CLASS_NAME, "thumbnail")
@@ -30,5 +34,7 @@ while True:
         element.click()
     except NoSuchElementException:
         break
+
 file.close()
+
 scraper.quit()
